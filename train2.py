@@ -4,7 +4,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
-data_dict = pickle.load(open('./dataRL.pickle', 'rb'))
+data_dict = pickle.load(open('./dataOfTen.pickle', 'rb'))
 
 data = np.asarray(data_dict['data'])
 labels = np.asarray(data_dict['labels'])
@@ -27,5 +27,5 @@ print('Recall: {:.2f}'.format(recall))
 print('F1 Score: {:.2f}'.format(f1))
 
 # Save the model to a file
-with open('modelRL.p', 'wb') as f:
+with open('modelOfTen.p', 'wb') as f:
     pickle.dump({'model': model}, f)
